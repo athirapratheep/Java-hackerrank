@@ -1,0 +1,20 @@
+public class Solution {
+
+    // Complete the catAndMouse function below.
+    static String catAndMouse(int x, int y, int z) {
+        int distA=Math.abs(x-z);
+        int distB=Math.abs(y-z);
+        if(distB<distA)
+        {
+            return "Cat B";
+        }
+        else if(distB>distA)
+        {
+            return "Cat A";
+        }
+        else
+        {
+            return "Mouse C";
+        }
+    }
+}
