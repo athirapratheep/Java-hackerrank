@@ -1,0 +1,30 @@
+public static int formingMagicSquare(List<List<Integer>> s) {
+    // Write your code here
+        int[][][] magicSquares={
+            {{8,3,4},{1,5,9},{6,7,2}},
+            {{8,1,6},{3,5,7},{4,9,2}},
+            {{6,1,8},{7,5,3},{2,9,4}},
+            {{4,9,2},{3,5,7},{8,1,6}},
+            {{2,9,4},{7,5,3},{6,1,8}},
+            {{4,3,8},{9,5,1},{2,7,6}},
+            {{6,7,2},{1,5,9},{8,3,4}},
+            {{2,7,6},{9,5,1},{4,3,8}}
+        };
+        int mincost=Integer.MAX_VALUE;
+        for(int[][] magicSquare:magicSquares)
+        {
+            int currentcost=0;
+            for(int i=0;i<3;i++)
+            {
+                for(int j=0;j<3;j++)
+                {
+                    currentcost+=Math.abs(s.get(i).get(j)- magicSquare[i][j]);
+                }
+            }
+            mincost=Math.min(mincost,currentcost);
+        }
+        return mincost;
+    }
+
+}
+//since the combinations are only 8 for 3x3 matrix where the magic constant is 15; we can use brute force approach.
