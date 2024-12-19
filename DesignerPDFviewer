@@ -1,0 +1,13 @@
+   public static int designerPdfViewer(List<Integer> h, String word) {
+    // Write your code here
+        int maxheight=0;
+        char[] ch=word.toCharArray();
+        for(char i:ch)
+        {
+            int index = i-'a';
+            maxheight=Math.max(maxheight,h.get(index));
+        }
+        return maxheight*word.length();
+    }
+
+}
