@@ -1,0 +1,15 @@
+ public static int pickingNumbers(List<Integer> a) {
+    // Write your code here
+        Collections.sort(a);
+        int maxlength=0;
+        int start=0;
+        for(int end=0;end<a.size();end++)
+        {
+            if(a.get(end)-a.get(start)>1)
+            {
+                start++;
+            }
+            maxlength=Math.max(maxlength,end-start+1);
+        }
+        return maxlength;
+    }
