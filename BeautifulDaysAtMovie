@@ -1,0 +1,38 @@
+class Result {
+
+    /*
+     * Complete the 'beautifulDays' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER i
+     *  2. INTEGER j
+     *  3. INTEGER k
+     */
+
+    public static int beautifulDays(int i, int j, int k) {
+    // Write your code here
+        int count=0;
+        for(int start=i;start<=j;start++)
+        {
+           int reversed=reverser(start);
+           int diff=Math.abs(start-reversed);
+           if(diff%k==0)
+           {
+                count++;
+           }
+        }
+        return count;
+    }
+    public static int reverser(int num)
+    {
+        int rev=0;
+        while(num>0)
+           {
+            rev=rev*10+num%10;
+            num=num/10;
+           }
+           return rev;
+    }
+
+}
