@@ -1,0 +1,23 @@
+class Result {
+
+    /*
+     * Complete the 'viralAdvertising' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static int viralAdvertising(int n) {
+    // Write your code here
+        int shared=5;
+        int addedlikes=0;
+        for(int day=1;day<=n;day++)
+        {
+            int likes=shared/2;
+            addedlikes+=likes;
+            shared=likes*3;
+        }
+        return addedlikes;
+    }
+
+}
