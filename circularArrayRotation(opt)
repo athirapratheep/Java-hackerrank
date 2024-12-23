@@ -1,0 +1,11 @@
+ public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
+    // Write your code here
+        int n = a.size();
+        k = k % n;
+        List<Integer> result = new ArrayList<>();
+        for (int query : queries) {
+            int rotatedIndex = (query - k + n) % n;
+            result.add(a.get(rotatedIndex));
+        }
+
+        return result;
