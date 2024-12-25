@@ -1,0 +1,27 @@
+class Result {
+
+    /*
+     * Complete the 'findDigits' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static int findDigits(int n) {
+    // Write your code here
+        int count=0;
+        int original=n;
+        do{
+           int dig=n%10;
+            if(dig!=0&&original%dig==0)
+            {
+                count++;
+            }
+            n/=10;
+        }while(n>0);
+        return count;
+        
+        
+    }
+
+}
