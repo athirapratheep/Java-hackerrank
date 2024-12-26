@@ -1,0 +1,26 @@
+class Result {
+
+    /*
+     * Complete the 'squares' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER a
+     *  2. INTEGER b
+     */
+
+    public static int squares(int a, int b) {
+    // Write your code here
+        int count=0;
+        int smallestroot=(int)Math.ceil(Math.sqrt(a));
+        int largestroot=(int)Math.floor(Math.sqrt(b));
+        for(int i=smallestroot;i<=largestroot;i++)
+        {
+            int root=i*i;
+            count++;
+            
+        }
+        return count;
+    }
+
+}
