@@ -1,0 +1,34 @@
+class Result {
+
+    /*
+     * Complete the 'nonDivisibleSubset' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY s
+     */
+
+    public static int nonDivisibleSubset(int k, List<Integer> s) {
+    // Write your code here
+    int[] remainderFreq = new int[k];
+        for (int num : s) {
+            remainderFreq[num % k]++;    
+        }
+        int subsetSize = 0;
+        if (remainderFreq[0] > 0) {
+            subsetSize++;
+        }
+        for (int i = 1; i <= k / 2; i++) {
+            if (i == k - i) {
+                subsetSize += 1;
+            } else {
+                subsetSize += Math.max(remainderFreq[i], remainderFreq[k - i]);
+            }
+        }
+
+        return subsetSize;
+
+    }
+
+}
