@@ -5,7 +5,7 @@
         for(int i=0;i<a.size();i++)
         {
             if(a.get(i)<=0)
-            {
+            k
                 negcount++;
             }
         }
